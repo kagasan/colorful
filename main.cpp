@@ -8,8 +8,13 @@ void negaposi(std::string input, std::string output){
     for(int y = 0; y < height; y++){
         for(int x = 0; x < width; x++){
             Color color = src.getColor(x, y);
-            if(y < height / 2)dst.setColor(x, y, color);
-            else dst.setRGB(x, y, 255 - color.r, 255 - color.g, 255 - color.b);
+            if(y < height / 2){
+                dst.setColor(x, y, color);
+                dst.setR(x, y, 0);
+            }
+            else{
+                dst.setRGB(x, y, 255 - color.r, 255 - color.g, 255 - color.b);
+            }
         }
     }
     dst.write(output);
