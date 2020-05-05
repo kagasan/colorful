@@ -1,0 +1,5 @@
+stb-master/*
+stb-master/
+.DS_Store
+*.out
+test_output.png
