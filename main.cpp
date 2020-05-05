@@ -10,7 +10,7 @@ void negaposi(std::string input, std::string output){
             Color color = src.getColor(x, y);
             if(y < height / 2){
                 dst.setColor(x, y, color);
-                dst.setG(x, y, 0);
+                dst.setG(x, y, x % 256);
             }
             else{
                 dst.setRGB(x, y, 255 - color.r, 255 - color.g, 255 - color.b);
