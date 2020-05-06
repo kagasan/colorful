@@ -8,7 +8,7 @@
 std::random_device rd;
 std::mt19937_64 mt;
 Color randomColor(){
-    return HLStoRGB(mt() % 360, 60 + mt() % 30, 40 + mt() % 30);
+    return HLStoRGB(mt() % 360, 50 + mt() % 50, 50 + mt() % 50);
 }
 
 void negaposi(std::string input, std::string output){
@@ -60,7 +60,7 @@ void colorful(std::string input, std::string output){
         }
     }
     for(Point p; mp.ok(p); mp.next(p)){
-        if(mp.get(p) == -2)dst.setColor(p, src.getColor(p));
+        if(mp.get(p) == -2)dst.setColor(p, Color(0, 0, 0));
         dst.setColor(p, colorVec[mp.get(p)]);
     }
     dst.write(output);
