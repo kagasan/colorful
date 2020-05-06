@@ -70,6 +70,18 @@ class int2d{
     bool next(Point &p){
         return next(p.x, p.y);
     }
+    void show(){
+        printf("y  x :");
+        for(int x = 0; x < width; x++)printf(" %8d", x);
+        printf("\n");
+        for(int y = 0; y < height; y++){
+            printf("%4d :", y);
+            for(int x = 0; x < width; x++){
+                printf(" %8d", get(x, y));
+            }
+            printf("\n");
+        }
+    }
 };
 
 class Color{
